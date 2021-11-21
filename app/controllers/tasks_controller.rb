@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
+  # protect_from_forgery with: :null_session
 
   # GET /tasks or /tasks.json
   def index
@@ -8,6 +9,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1 or /tasks/1.json
   def show
+    @task = Task.find(params[:id])
   end
 
   # GET /tasks/new
@@ -18,6 +20,11 @@ class TasksController < ApplicationController
   # GET /tasks/1/edit
   def edit
   end
+
+  # def callback
+  #   binding.pry
+  # end
+
 
   # POST /tasks or /tasks.json
   def create
