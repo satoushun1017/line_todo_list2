@@ -59,4 +59,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # ngrok を立ち上げた際に発行される URL のドメイン部分（https:// 以降)を以下のように記載する
+  config.hosts = ["c53c-2400-2410-2541-f900-b1e2-8e2a-52da-84bb.ngrok.io", "localhost"]
 end
